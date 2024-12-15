@@ -1,0 +1,11 @@
+# تحديد منصة iOS
+platform :ios, '13.0'
+
+# تعريف الهدف (target) الخاص بالتطبيق
+target 'Runner' do
+  # استخدام الإطارات الديناميكية
+  use_frameworks!
+
+  # إضافة الحزم (Pods) المطلوبة للتطبيق
+  pod 'Firebase/Firestore'
+end

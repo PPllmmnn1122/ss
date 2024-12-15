@@ -147,6 +147,7 @@ class _NormalPersonScreenState extends State<NormalPersonScreen> {
   ),
           backgroundColor: const Color.fromARGB(255, 84, 121, 247),
           actions: [
+            
             IconButton(
               icon: const Icon(Icons.switch_right),
               color: Color.fromARGB(255, 255, 255, 255), // لون الأيقونة أبيض
