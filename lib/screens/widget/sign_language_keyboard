@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+
+class ChatScreen extends StatefulWidget {
+  @override
+  _ChatScreenState createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
+  final TextEditingController _controller = TextEditingController();
+
+  void _handleKeyPressed(String letter) {
+    setState(() {
+      _controller.text += letter;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Sign Language Chat')),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView(
+              // Your chat messages go here
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _controller,
+                    decoration: InputDecoration(
+                      hintText: 'Type your message...',
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.send),
+                  onPressed: () {
+                    // Handle message send
+                  },
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 200,
+            child: SignLanguageKeyboard(onKeyPressed: _handleKeyPressed),
+          ),
+        ],
+      ),
+    );
+  }
+}
